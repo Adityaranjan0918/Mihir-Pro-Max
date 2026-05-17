@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💥 PHAADU SYSTEMMM OF MIHIR 💥</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #00ffcc;
+            font-family: 'Impact', 'Comic Sans MS', sans-serif;
+            overflow-x: hidden;
+            text-align: center;
+            user-select: none;
+        }
+
+        /* --- ENTRY OVERLAY --- */
+        #entry-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(90deg, #ff0000, #000, #ff00ff, #ffff00);
+            background-size: 800% 800%;
+            animation: ultraGradient 0.8s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 20000;
+            padding: 20px;
+        }
+
+        @keyframes ultraGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .tap-btn {
+            background-color: #ff0000;
+            color: #ffff00;
+            border: 10px dashed #fff;
+            padding: 30px 50px;
+            font-size: 38px;
+            font-weight: 900;
+            cursor: pointer;
+            border-radius: 30px;
+            box-shadow: 0 0 80px #ffff00;
+            animation: phaaduPulse 0.2s infinite alternate;
+            text-transform: uppercase;
+        }
+
+        @keyframes phaaduPulse {
+            from { transform: scale(1) rotate(-3deg); }
+            to { transform: scale(1.25) rotate(3deg); }
+        }
+
+        /* --- MAIN CONTENT --- */
+        #main-content {
+            display: none;
+            padding-bottom: 250px;
+        }
+
+        /* Hardcore Neon Background Flash */
+        .flashing-bg {
+            animation: hardcoreSeizure 0.15s infinite;
+        }
+
+        @keyframes hardcoreSeizure {
+            0% { background-color: #ff00ff; }
+            20% { background-color: #ffff00; }
+            40% { background-color: #00ff00; }
+            60% { background-color: #ff0000; }
+            80% { background-color: #00ffff; }
+            100% { background-color: #ff5500; }
+        }
+
+        marquee {
+            background-color: #000;
+            color: #ff00ff;
+            font-size: 32px;
+            padding: 15px;
+            font-weight: 900;
+            border: 8px solid #00ff00;
+            text-shadow: 3px 3px #fff;
+        }
+
+        .header-title {
+            color: #fff;
+            background: #ff0000;
+            display: inline-block;
+            padding: 15px 30px;
+            border: 8px double #ffff00;
+            box-shadow: 10px 10px 0 #000;
+            margin: 20px 0;
+            font-size: 48px;
+            animation: extremeShake 0.2s infinite linear;
+        }
+
+        @keyframes extremeShake {
+            0% { transform: translate(3px, 2px) rotate(1deg); }
+            20% { transform: translate(-3px, 0px) rotate(-1deg); }
+            40% { transform: translate(2px, -2px) rotate(2deg); }
+            60% { transform: translate(-3px, 2px) rotate(0deg); }
+            80% { transform: translate(-2px, -2px) rotate(2deg); }
+            100% { transform: translate(2px, 2px) rotate(-1deg); }
+        }
+
+        /* Spinning Photo */
+        .photo-container {
+            position: relative;
+            margin: 50px auto;
+            width: 320px;
+            height: 320px;
+        }
+
+        .mihir-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20%;
+            border: 20px ridge #00ff00;
+            box-shadow: 0 0 100px #ffff00;
+            animation: phaaduSpin 0.4s infinite linear;
+        }
+
+        @keyframes phaaduSpin {
+            from { transform: rotate(0deg) scale(1); }
+            to { transform: rotate(-360deg) scale(1.1); }
+        }
+
+        .sticker {
+            position: absolute;
+            font-size: 70px;
+            filter: drop-shadow(5px 5px 0px #000);
+            z-index: 10;
+        }
+        .st-1 { top: -40px; left: -40px; animation: stBounce 0.15s infinite alternate; }
+        .st-2 { bottom: -40px; right: -40px; animation: stBounce 0.2s infinite alternate; }
+        .st-3 { top: -40px; right: -40px; animation: stBounce 0.18s infinite alternate; }
+        .st-4 { bottom: -40px; left: -40px; animation: stBounce 0.22s infinite alternate; }
+
+        @keyframes stBounce {
+            from { transform: translateY(0) scale(1) rotate(-15deg); }
+            to { transform: translateY(-50px) scale(1.6) rotate(15deg); }
+        }
+
+        /* Animated Drifting Tractor/Scorpio */
+        .drifting-vehicle {
+            position: fixed;
+            bottom: 30px;
+            left: -200px;
+            font-size: 90px;
+            z-index: 15000;
+            filter: drop-shadow(10px 10px 0px #000);
+            animation: driftAcross 2s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes driftAcross {
+            0% { left: -200px; transform: translateY(0px) rotate(-10deg); }
+            25% { transform: translateY(-40px) rotate(10deg); }
+            50% { transform: translateY(0px) rotate(-5deg); }
+            75% { transform: translateY(-20px) rotate(15deg); }
+            100% { left: 105vw; transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* Forced Confession Trap Box */
+        .trap-box {
+            background: #000;
+            color: #00ff00;
+            width: 95%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 25px;
+            border: 8px dashed #ff0000;
+            border-radius: 15px;
+            font-family: monospace;
+            font-size: 22px;
+            box-shadow: 0 0 50px #ff0000;
+            animation: boxGlow 0.5s infinite alternate;
+        }
+
+        @keyframes boxGlow {
+            from { border-color: #ff0000; }
+            to { border-color: #ffff00; }
+        }
+
+        .trap-btn {
+            background: #ff0000;
+            color: #ffff00;
+            border: 5px solid #fff;
+            padding: 20px 30px;
+            font-size: 26px;
+            font-weight: 900;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 15px;
+            box-shadow: 5px 5px #00ff00;
+            text-transform: uppercase;
+        }
+
+        /* RUNAWAY BUTTON */
+        #runaway-btn {
+            position: relative;
+            background: #000;
+            color: #00ffff;
+            border: 8px ridge #ff00ff;
+            padding: 25px 50px;
+            font-size: 30px;
+            font-weight: 900;
+            border-radius: 50px;
+            margin-top: 30px;
+            cursor: pointer;
+            z-index: 5000;
+        }
+
+        /* Falling Rain */
+        .rain-drop {
+            position: fixed;
+            top: -50px;
+            font-size: 55px;
+            z-index: 999;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(105vh) rotate(1080deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="drifting-vehicle">🚜💨</div>
+
+    <audio id="cringe-audio" loop>
+        <source src="https://www.soundjay.com/buttons/sounds/button-3.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="entry-screen">
+        <h1 style="color: #fff; font-size: 60px; text-shadow: 5px 5px #000;">🚨 BHAUKAAL ALERT 🚨</h1>
+        <button class="tap-btn" onclick="startPrank(event)">💥 RELEASE MIHIR'S POWER 💥</button>
+        <p style="color: #ffff00; font-size: 24px; font-weight: bold; margin-top: 20px; background: #000; padding: 10px; border-radius: 5px;">⚠️ KEEP VOLUME AT 200%</p>
+    </div>
+
+    <div id="main-content">
+
+        <marquee scrollamount="35">🔥 😎 MIHIR BHAI KI ENTRY, VADAA PAV CENTURY! GADDI SIDE LAGA LO VARNA CHADA DENGE! 😎 🔥 FULL SYSTEMMM 🔥</marquee>
+
+        <h1 class="header-title">👑 HEAVY DRIVER MIHIR 👑</h1>
+
+        <div class="photo-container">
+            <img class="mihir-pic" src="https://placehold.co/400x400/ff0000/ffffff?text=Put+Mihir\nPhoto+Here" alt="Mihir">
+            
+            <div class="sticker st-1">😎</div>
+            <div class="sticker st-2">🚜</div>
+            <div class="sticker st-3"> Baingan🍆</div>
+            <div class="sticker st-4">💩</div>
+        </div>
+
+        <div class="trap-box">
+            ⚠️ SYSTEM OVERHEAT WARNING ⚠️<br>
+            <span style="color: #fff; font-size: 18px;">Mihir's pure high-voltage attitude is melting your processor!</span><br><br>
+            <span style="color: #ffff00; font-size: 18px;">To cool down your device, you must confess the ultimate truth:</span><br>
+            <button class="trap-btn" onclick="forceConfession(event)">👉 TYPE VERIFICATION CODE 👈</button>
+        </div>
+
+        <div>
+            <button id="runaway-btn" onmouseover="dodgeCursor()" ontouchstart="dodgeCursor()" onclick="caughtMe(event)">🛑 TRY TO MUTE MUSIC 🛑</button>
+        </div>
+
+        <marquee direction="right" scrollamount="40" style="margin-top: 50px; background-color: #0000ff; color: #ffff00;">😂 NASA WALE BHI MIHIR BHAI SE HTML SIKHTE HAI 😂</marquee>
+
+    </div>
+
+    <script>
+        function startPrank(event) {
+            event.stopPropagation();
+            
+            document.getElementById('entry-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            document.body.classList.add('flashing-bg');
+            
+            // Blast Audio
+            const audio = document.getElementById('cringe-audio');
+            audio.play().catch(e => console.log("Audio play failed:", e));
+
+            // EXTREME VIBRATION (Android Only)
+            if (navigator.vibrate) {
+                navigator.vibrate([1000, 500, 2000, 500, 3000, 500, 5000]);
+            }
+
+            // ROBOT VOICE ANNOUNCEMENT (TTS)
+            if ('speechSynthesis' in window) {
+                const speech = new SpeechSynthesisUtterance();
+                speech.text = "Mihir bhai ka bhaukaal shuru! Gaddi side laga lo varna tractor chada denge! Aye baingan!";
+                speech.rate = 1.1;
+                speech.pitch = 0.7; 
+                window.speechSynthesis.speak(speech);
+            }
+
+            // Start insane Emoji Rain
+            setInterval(createRain, 100);
+
+            // Annoying timed warnings
+            setTimeout(() => { alert("🚨 BATTERY MELTING: Mihir's swag level is exceeding 9000%! 🚨"); }, 4000);
+            setTimeout(() => { alert("😂 VIP ALERT: All your mobile data is being used to download Mihir's HD wallpapers! 😂"); }, 9000);
+        }
+
+        // --- FORCED CONFESSION TRAP LOGIC ---
+        function forceConfession(event) {
+            event.stopPropagation();
+            let userInput = prompt("Type exactly: 'MIHIR BHAI SABKE BOSS HAI' to unlock your screen:");
+            
+            if (userInput && userInput.toUpperCase().trim() === "MIHIR BHAI SABKE BOSS HAI") {
+                alert("📢 CONFESSION ACCEPTED! 📢");
+                alert("Success! Automatically setting this text as your WhatsApp status and sending it to your family group... 🚀😂");
+            } else {
+                alert("❌ WRONG CODE! You dare disrespect the Boss? Vibration increased! ❌");
+                if (navigator.vibrate) navigator.vibrate([1000, 1000, 1000]);
+            }
+        }
+
+        // --- FALLING EMOJI RAIN ---
+        const emojis = ['💥', '💀', '🔥', '💩', '🕺', '🚜', '🍆', '🤡', '😎'];
+        function createRain() {
+            const drop = document.createElement('div');
+            drop.classList.add('rain-drop');
+            drop.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            drop.style.left = Math.random() * 100 + 'vw';
+            
+            const duration = Math.random() * 1.5 + 0.5; // Ultra fast fall
+            drop.style.animationDuration = duration + 's';
+
+            document.body.appendChild(drop);
+            setTimeout(() => { drop.remove(); }, duration * 1000);
+        }
+
+        // --- RUNAWAY BUTTON ---
+        const runawayBtn = document.getElementById('runaway-btn');
+        function dodgeCursor() {
+            const newX = Math.random() * (window.innerWidth - 300); 
+            const newY = Math.random() * (window.innerHeight - 150); 
+
+            runawayBtn.style.position = 'fixed';
+            runawayBtn.style.left = Math.max(20, newX) + 'px';
+            runawayBtn.style.top = Math.max(20, newY) + 'px';
+
+            if (navigator.vibrate) navigator.vibrate(50);
+        }
+
+        function caughtMe(event) {
+            event.stopPropagation();
+            alert("Error 404: Mihir's system cannot be muted! 🚜💨");
+        }
+    </script>
+</body>
+</html>
